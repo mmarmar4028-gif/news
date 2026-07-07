@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ДО «Цесовский» — новый офис Инго Банка</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    :root{
+      --blue:#0B4EA2;
+      --blue-dark:#083b7a;
+      --text:#333333;
+      --muted:#64748B;
+      --card:#F5F8FD;
+      --card-2:#EEF4FB;
+      --shadow:0 15px 40px rgba(11,78,162,.08);
+      --shadow-hover:0 10px 30px rgba(11,78,162,.10);
+      --radius-xl:30px;
+      --radius-lg:28px;
+      --radius-md:24px;
+      --radius-sm:16px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:#ffffff}
+    body{font-family:'Inter',Arial,sans-serif;color:var(--text)}
+
+    .med-wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:48px 24px 72px;
+      color:#1E293B;
+    }
+
+    .med-title{
+      font-size:42px;
+      line-height:1.12;
+      font-weight:800;
+      color:var(--blue);
+      margin:0 0 22px;
+      letter-spacing:-0.02em;
+    }
+
+    .med-lead{
+      font-size:20px;
+      line-height:1.65;
+      font-weight:300;
+      color:var(--text);
+      max-width:920px;
+      margin:0 0 40px;
+    }
+
+    .med-photo{
+      width:100%;
+      height:520px;
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      background:linear-gradient(135deg,#EAF2FD,#DDEAFF);
+      margin-bottom:45px;
+      box-shadow:var(--shadow);
+      position:relative;
+      opacity:0;
+      transform:translateY(30px);
+      animation:medPhotoAppear 1.5s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+      animation-delay:.15s;
+    }
+
+    .med-photo img,
+    .med-two-img img,
+    .med-card-photo img,
+    .med-list-img img,
+    .med-quote-photo img,
+    .med-square img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .photo-placeholder{
+      width:100%;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      color:#5b6b85;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.7), rgba(255,255,255,.2)),
+        repeating-linear-gradient(45deg, #dfe8f6 0, #dfe8f6 18px, #eaf1fb 18px, #eaf1fb 36px);
+    }
+
+    @keyframes medPhotoAppear{
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    .med-section{
+      font-size:28px;
+      line-height:1.25;
+      font-weight:700;
+      color:var(--blue);
+      margin:50px 0 22px;
+      letter-spacing:-0.01em;
+    }
+
+    .med-text{
+      font-size:18px;
+      line-height:1.75;
+      font-weight:300;
+      color:var(--text);
+    }
+
+    .med-text p{margin:0 0 16px}
+    .med-text p:last-child{margin-bottom:0}
+
+    .med-block{
+      background:linear-gradient(135deg,#F1F6FF,#FFFFFF);
+      border-radius:var(--radius-xl);
+      padding:40px;
+      margin:50px 0;
+      box-shadow:var(--shadow);
+    }
+
+    .med-quote{
+      background:var(--blue);
+      color:#fff;
+      border-radius:var(--radius-xl);
+      padding:42px;
+      margin:50px 0;
+      box-shadow:0 15px 40px rgba(11,78,162,.16);
+    }
+
+    .med-quote-photo{
+      width:100%;
+      height:250px;
+      border-radius:20px;
+      overflow:hidden;
+      margin:0 0 24px;
+      background:#dbe7f6;
+    }
+
+    .med-quote-title{
+      font-size:22px;
+      font-weight:700;
+      margin:0 0 18px;
+      line-height:1.3;
+    }
+
+    .med-quote-text{
+      font-size:18px;
+      line-height:1.75;
+      font-weight:300;
+      font-style:italic;
+      margin:0;
+    }
+
+    .med-square-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      margin:20px 0 8px;
+    }
+
+    .med-square{
+      aspect-ratio:1/1;
+      border-radius:24px;
+      overflow:hidden;
+      background:var(--card-2);
+      box-shadow:0 12px 35px rgba(15,23,42,.08);
+    }
+
+    .med-note{
+      background:#F5F8FD;
+      border-radius:24px;
+      padding:24px;
+      margin:24px 0 50px;
+      font-size:16px;
+      line-height:1.65;
+      color:var(--muted);
+    }
+
+    .med-map-wrap{
+      margin:28px 0 46px;
+      padding:28px;
+      border-radius:var(--radius-xl);
+      background:linear-gradient(135deg,#F7FAFF,#FFFFFF);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .med-map-title{
+      font-size:22px;
+      line-height:1.3;
+      font-weight:700;
+      color:var(--blue);
+      margin:0 0 18px;
+    }
+
+    .med-map{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    .russia-outline{
+      fill:#EEF4FB;
+      stroke:#0B4EA2;
+      stroke-width:2.5;
+      stroke-linejoin:round;
+      stroke-linecap:round;
+    }
+
+    .irkutsk-ring{
+      fill:none;
+      stroke:#FF9F1C;
+      stroke-width:3.5;
+      transform-origin: center;
+      animation: ringPulse 1.8s ease-in-out infinite;
+    }
+
+    .irkutsk-dot{
+      fill:#FF9F1C;
+      animation: dotPulse 1.8s ease-in-out infinite;
+      transform-origin:center;
+    }
+
+    @keyframes ringPulse{
+      0%{transform:scale(.82);opacity:.25}
+      45%{transform:scale(1.18);opacity:1}
+      100%{transform:scale(1.32);opacity:0}
+    }
+
+    @keyframes dotPulse{
+      0%,100%{opacity:.85;transform:scale(1)}
+      50%{opacity:1;transform:scale(1.15)}
+    }
+
+    @media (max-width: 900px){
+      .med-title{font-size:34px}
+      .med-lead{font-size:18px}
+      .med-photo{height:420px}
+      .med-section{font-size:24px}
+      .med-block,.med-quote{padding:30px}
+    }
+
+    @media (max-width: 700px){
+      .med-wrap{padding:28px 16px 56px}
+      .med-title{font-size:30px}
+      .med-photo{height:300px;border-radius:24px}
+      .med-square-grid{grid-template-columns:1fr;gap:16px}
+      .med-square{aspect-ratio:1/1}
+      .med-quote-photo{height:220px}
+      .med-block,.med-quote{padding:22px;border-radius:24px}
+    }
+  </style>
+</head>
+<body>
+  <main class="med-wrap">
+    <h1 class="med-title">В Иркутске откроется новый дополнительный офис Инго Банка — ДО «Цесовский»</h1>
+
+    <div class="med-lead">
+      В конце июля в Иркутске начнет работу новый дополнительный офис нашего Банка — ДО «Цесовский».
+      Это первый офис Банка, выполненный в новом премиальном формате, который сочетает современный
+      дизайн, высокий уровень сервиса и полный спектр банковских услуг.
+    </div>
+
+    <!-- Главное горизонтальное фото -->
+    <div class="med-photo">
+      <!-- Вставьте здесь горизонтальное фото -->
+      <div class="photo-placeholder">Горизонтальное фото офиса</div>
+    </div>
+
+    <section class="med-text">
+      <p>Офис расположен в историческом центре Иркутска. Свое название он получил в честь Цесовской набережной, где в 1910 году была построена Иркутская городская центральная электрическая станция (ЦЭС) — одно из первых энергетических предприятий Восточной Сибири.</p>
+    </section>
+
+    <div class="med-map-wrap" aria-label="Карта России с выделенным Иркутском">
+      <div class="med-map-title">Иркутск на карте России</div>
+      <svg class="med-map" viewBox="0 0 1100 420" role="img" aria-hidden="true">
+        <defs>
+          <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0B4EA2" flood-opacity="0.08"/>
+          </filter>
+        </defs>
+
+        <rect x="0" y="0" width="1100" height="420" rx="28" fill="#F9FBFF"/>
+
+        <path class="russia-outline" filter="url(#softShadow)" d="M78,245 L115,215 L160,210 L208,188 L260,178 L312,156 L360,160 L398,140 L430,120 L490,118 L542,98 L600,104 L652,88 L708,96 L760,86 L818,96 L874,126 L925,146 L968,136 L1014,154 L1030,190 L998,210 L960,214 L930,238 L888,252 L842,270 L802,294 L758,302 L724,326 L668,334 L612,320 L560,334 L500,320 L444,322 L396,300 L342,294 L290,286 L246,268 L198,268 L150,260 Z"/>
+
+        <path class="russia-outline" d="M240,260 L292,242 L354,246 L418,230 L476,210 L534,216 L598,198 L662,202 L724,188 L778,204 L840,198 L900,218" opacity=".35"/>
+
+        <g transform="translate(760 214)">
+          <circle class="irkutsk-ring" cx="0" cy="0" r="18"/>
+          <circle class="irkutsk-dot" cx="0" cy="0" r="6"/>
+        </g>
+
+        <text x="795" y="206" font-family="Inter, Arial, sans-serif" font-size="16" fill="#0B4EA2" font-weight="600">Иркутск</text>
+      </svg>
+    </div>
+
+    <h2 class="med-section">Новый офис стал первым, в оформлении которого использована обновленная дизайн-концепция Инго Банка</h2>
+
+    <section class="med-text">
+      <p>Интерьер вдохновлен природой Сибири: теплые оттенки древесины и глубокий синий цвет Байкала создают комфортную и современную атмосферу. Именно в таком стиле будут оформляться и будущие офисы Банка.</p>
+    </section>
+
+    <!-- 3 квадратных фото сразу после нужного блока -->
+    <div class="med-square-grid" aria-label="Три квадратных фото интерьера">
+      <div class="med-square">
+        <!-- Вставьте квадратное фото 1 -->
+        <div class="photo-placeholder">Фото 1</div>
+      </div>
+      <div class="med-square">
+        <!-- Вставьте квадратное фото 2 -->
+        <div class="photo-placeholder">Фото 2</div>
+      </div>
+      <div class="med-square">
+        <!-- Вставьте квадратное фото 3 -->
+        <div class="photo-placeholder">Фото 3</div>
+      </div>
+    </div>
+
+    <div class="med-note">
+      Место для трех квадратных фотографий со скругленными углами — здесь лучше всего поставить интерьер,
+      зону обслуживания и общий вид офиса. Блок стоит сразу после текста про новую дизайн-концепцию,
+      как и в вашем примере.
+    </div>
+
+    <div class="med-quote">
+      <!-- Перед цитатой обязательно горизонтальное фото -->
+      <div class="med-quote-photo">
+        <!-- Вставьте горизонтальное фото перед цитатой -->
+        <div class="photo-placeholder">Горизонтальное фото перед цитатой</div>
+      </div>
+      <div class="med-quote-title">Юрий Степкин, заместитель Председателя Правления</div>
+      <p class="med-quote-text">«Данное событие является важной вехой в развитии Инго Банка, офис имеет новый премиальный формат и предполагает высокий уровень сервиса. Это наш первый офис в обновленном формате с использованием новых цветовых решений в оформлении. Теплые краски пород деревьев Сибири и синяя глубина озера Байкал взяты за основу и все будущие офисы продолжат оформляться в похожем стиле. Офис предполагает полноформатный режим работы с кассой, депозитарием и предоставлением нашим клиентам всего спектра услуг банка».</p>
+    </div>
+
+    <section class="med-text">
+      <p>Еще одной особенностью нового офиса стало его расположение в современном бизнес-центре ГК «ЭН+». Это позволит Банку укрепить взаимодействие с ключевыми партнерами и повысить узнаваемость бренда в регионе.</p>
+    </section>
+
+    <div class="med-quote">
+      <!-- Перед цитатой обязательно горизонтальное фото -->
+      <div class="med-quote-photo">
+        <!-- Вставьте горизонтальное фото перед цитатой -->
+        <div class="photo-placeholder">Горизонтальное фото перед цитатой</div>
+      </div>
+      <div class="med-quote-title">Елена Пластинина, управляющий Иркутским филиалом</div>
+      <p class="med-quote-text">«Территориальное расположение ДО Цесовский позволит позиционировать Инго Банк в регионе, а также укрепить взаимоотношения с ключевыми партнёрами. Для нашего филиала это большое и ответственное событие, которое требует от сотрудников знаний и навыков, позволяющих оказывать высококлассный сервис».</p>
+    </div>
+
+    <section class="med-text">
+      <p>Открытие ДО «Цесовский» стало важным событием для Инго Банка и Иркутского филиала.</p>
+      <p>Новый офис — это не только современное пространство для обслуживания клиентов, но и важный этап в реализации новой концепции Банка, объединяющей комфорт, технологии и высокий уровень сервиса.</p>
+    </section>
+  </main>
+</body>
+</html>
