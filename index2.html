@@ -197,11 +197,24 @@
       margin:0 0 18px;
     }
 
-    .med-map{
-      width:100%;
-      height:auto;
-      display:block;
-    }
+    .med-map-container{
+    position: relative;
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.med-map-image{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.med-map-image{
+    display: block;
+    width: 100%;
+    height: auto;
+}
 
 
 .irkutsk-marker{position:absolute;
@@ -268,8 +281,11 @@
     <div class="med-map-title">
         Иркутск на карте России
     </div>
+
     <div class="med-map-container">
-        <img src="russia.svg.webp">
+          <img src="russia.svg.webp"
+     class="med-map-image"
+     alt="Карта России">
         <!-- Маркер Иркутска -->
         <div class="irkutsk-marker"></div>
     </div>
