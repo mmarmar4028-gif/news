@@ -170,66 +170,7 @@
       box-shadow:0 12px 35px rgba(15,23,42,.08);
     }
 
-    .med-note{
-      background:#F5F8FD;
-      border-radius:24px;
-      padding:24px;
-      margin:24px 0 50px;
-      font-size:16px;
-      line-height:1.65;
-      color:var(--muted);
-    }
-
-    .med-map-wrap{
-      margin:28px 0 46px;
-      padding:28px;
-      border-radius:var(--radius-xl);
-      background:linear-gradient(135deg,#F7FAFF,#FFFFFF);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-
-    .med-map-title{
-      font-size:22px;
-      line-height:1.3;
-      font-weight:700;
-      color:var(--blue);
-      margin:0 0 18px;
-    }
-
-    .med-map{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-
-    .russia-outline{
-      fill:#EEF4FB;
-      stroke:#0B4EA2;
-      stroke-width:2.5;
-      stroke-linejoin:round;
-      stroke-linecap:round;
-    }
-
-    .irkutsk-ring{
-      fill:none;
-      stroke:#FF9F1C;
-      stroke-width:3.5;
-      opacity:.35;
-      animation:ringPulse 1.8s ease-in-out infinite;
-    }
-
-    @keyframes ringPulse{
-      0%,100%{opacity:.22}
-      50%{opacity:1}
-    }
-
-    @keyframes dotPulse{
-      0%,100%{opacity:.85;transform:scale(1)}
-      50%{opacity:1;transform:scale(1.15)}
-    }
-
-    @media (max-width: 900px){
+    .med-note{\n      background:#F5F8FD;\n      border-radius:24px;\n      padding:24px;\n      margin:24px 0 50px;\n      font-size:16px;\n      line-height:1.65;\n      color:var(--muted);\n    }\n\n    .med-map-wrap{\n      margin:28px 0 46px;\n      padding:18px 0 8px;\n      border-radius:var(--radius-xl);\n      overflow:hidden;\n    }\n\n    .med-map{\n      width:100%;\n      height:auto;\n      display:block;\n      shape-rendering:geometricPrecision;\n    }\n\n    .map-bg{\n      fill:#ffffff;\n    }\n\n    .map-russia{\n      fill:#9B9B9B;\n      stroke:#8A8A8A;\n      stroke-width:2;\n      stroke-linejoin:round;\n      vector-effect:non-scaling-stroke;\n    }\n\n    .map-russia-lines{\n      fill:none;\n      stroke:#F4F4F4;\n      stroke-width:1.3;\n      stroke-linecap:round;\n      stroke-linejoin:round;\n      opacity:.9;\n      vector-effect:non-scaling-stroke;\n    }\n\n    .map-irkutsk-fill{\n      fill:#FF8A00;\n      stroke:#ffffff;\n      stroke-width:2;\n      vector-effect:non-scaling-stroke;\n    }\n\n    .map-irkutsk-pulse{\n      fill:none;\n      stroke:#FF8A00;\n      stroke-width:3.5;\n      vector-effect:non-scaling-stroke;\n      animation: irkPulse 1.8s ease-in-out infinite;\n      transform-origin: center;\n    }\n\n    @keyframes irkPulse{\n      0%{opacity:0;transform:scale(.95)}\n      35%{opacity:.85;transform:scale(1)}\n      70%{opacity:0;transform:scale(1.1)}\n      100%{opacity:0;transform:scale(1.12)}\n    }\n\n    .map-label-box{\n      fill:#0B4EA2;\n      filter: drop-shadow(0 6px 10px rgba(11,78,162,.18));\n    }\n\n    .map-label-text{\n      font-family:'Inter',Arial,sans-serif;\n      font-size:16px;\n      font-weight:600;\n      fill:#ffffff;\n      letter-spacing:.01em;\n    }\n\n    .map-pointer{\n      fill:#0B4EA2;\n      filter: drop-shadow(0 4px 8px rgba(11,78,162,.18));\n    }\n\n    @media (max-width: 900px){
       .med-title{font-size:34px}
       .med-lead{font-size:18px}
       .med-photo{height:420px}
@@ -264,62 +205,7 @@
       <div class="photo-placeholder">Горизонтальное фото офиса</div>
     </div>
 
-    <section class="med-text">
-      <p>Офис расположен в историческом центре Иркутска. Свое название он получил в честь Цесовской набережной, где в 1910 году была построена Иркутская городская центральная электрическая станция (ЦЭС) — одно из первых энергетических предприятий Восточной Сибири.</p>
-    </section>
-
-    <div class="med-map-wrap" aria-label="Карта России с выделенным Иркутском">
-      <div class="med-map-title">Иркутск на карте России</div>
-      <svg class="med-map" viewBox="0 0 1100 420" role="img" aria-hidden="true">
-        <defs>
-          <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0B4EA2" flood-opacity="0.08"/>
-          </filter>
-        </defs>
-
-        <rect x="0" y="0" width="1100" height="420" rx="28" fill="#F9FBFF"/>
-
-        <path class="russia-outline" filter="url(#softShadow)" d="M78,245 L115,215 L160,210 L208,188 L260,178 L312,156 L360,160 L398,140 L430,120 L490,118 L542,98 L600,104 L652,88 L708,96 L760,86 L818,96 L874,126 L925,146 L968,136 L1014,154 L1030,190 L998,210 L960,214 L930,238 L888,252 L842,270 L802,294 L758,302 L724,326 L668,334 L612,320 L560,334 L500,320 L444,322 L396,300 L342,294 L290,286 L246,268 L198,268 L150,260 Z"/>
-
-        <path class="russia-outline" d="M240,260 L292,242 L354,246 L418,230 L476,210 L534,216 L598,198 L662,202 L724,188 L778,204 L840,198 L900,218" opacity=".35"/>
-
-        <g transform="translate(760 214)">
-          < class="irkutsk-ring" cx="0" cy="0" r="18"/>
-        </g>
-
-        <text x="795" y="206" font-family="Inter, Arial, sans-serif" font-size="16" fill="#0B4EA2" font-weight="600">Иркутск</text>
-      </svg>
-    </div>
-
-    <h2 class="med-section">Новый офис стал первым, в оформлении которого использована обновленная дизайн-концепция Инго Банка</h2>
-
-    <section class="med-text">
-      <p>Интерьер вдохновлен природой Сибири: теплые оттенки древесины и глубокий синий цвет Байкала создают комфортную и современную атмосферу. Именно в таком стиле будут оформляться и будущие офисы Банка.</p>
-    </section>
-
-    <!-- 3 квадратных фото сразу после нужного блока -->
-    <div class="med-square-grid" aria-label="Три квадратных фото интерьера">
-      <div class="med-square">
-        <!-- Вставьте квадратное фото 1 -->
-        <div class="photo-placeholder">Фото 1</div>
-      </div>
-      <div class="med-square">
-        <!-- Вставьте квадратное фото 2 -->
-        <div class="photo-placeholder">Фото 2</div>
-      </div>
-      <div class="med-square">
-        <!-- Вставьте квадратное фото 3 -->
-        <div class="photo-placeholder">Фото 3</div>
-      </div>
-    </div>
-
-    <div class="med-note">
-      Место для трех квадратных фотографий со скругленными углами — здесь лучше всего поставить интерьер,
-      зону обслуживания и общий вид офиса. Блок стоит сразу после текста про новую дизайн-концепцию,
-      как и в вашем примере.
-    </div>
-
-    <div class="med-quote">
+    <section class="med-text">\n      <p>Офис расположен в историческом центре Иркутска. Свое название он получил в честь Цесовской набережной, где в 1910 году была построена Иркутская городская центральная электрическая станция (ЦЭС) — одно из первых энергетических предприятий Восточной Сибири.</p>\n    </section>\n\n    <div class="med-map-wrap" aria-label="Карта Иркутской области по образцу">\n      <img src="sandbox:/mnt/data/9DD0D81F-18B2-4647-A416-451BC1203E4D.jpeg" alt="Карта Иркутской области" style="width:100%;height:auto;display:block;border-radius:20px;" />\n    </div>\n\n    <div class="med-quote">
       <!-- Перед цитатой обязательно горизонтальное фото -->
       <div class="med-quote-photo">
         <!-- Вставьте горизонтальное фото перед цитатой -->
